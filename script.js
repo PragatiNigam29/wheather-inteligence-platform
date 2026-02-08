@@ -9,7 +9,7 @@ async function getWeather() {
 
   // CURRENT WEATHER
   const res = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
+    fetch(`/api/weather?city=${city}`)
   );
   const data = await res.json();
 
@@ -104,4 +104,5 @@ async function getWeather() {
   if (alertBox) {
     alertBox.innerHTML = "No active warnings";
   }
+
 }
